@@ -2,7 +2,7 @@
  * Heap.cpp
  *
  *  Created on: Sep 13, 2017
- *      Author: sm186114
+ *      Author: Santosh Kumar Mishra
  */
 
 #include <cmath>

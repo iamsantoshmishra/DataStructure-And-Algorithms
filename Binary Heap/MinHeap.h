@@ -2,7 +2,7 @@
  * MinHeap.h
  *
  *  Created on: Sep 14, 2017
- *      Author: sm186114
+ *      Author: Santosh Kumar Mishra
  */
 
 #ifndef MINHEAP_H_
