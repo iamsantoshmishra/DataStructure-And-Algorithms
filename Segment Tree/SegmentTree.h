@@ -25,7 +25,9 @@ public:
 	virtual void build(int *arr,int low,int high,int pos) = 0;
 	virtual void build(vector<int> v,int low,int high,int pos) = 0;
 	int rangeQuery(int qlow,int qhigh);
+	void rangeUpdate(int qlow,int qhigh,int delta);
 	virtual int rangeQueryUtil(int qlow,int qhigh,int low,int high,int pos) = 0;
+	virtual void rangeUpdateUtil(int qlow,int qhigh,int low,int high,int pos,int delta) = 0;
 	int parent(int index);
 	int left(int index);
 	int right(int index);

@@ -31,6 +31,8 @@ int main(){
 	cout<<"\nMaximum between 6 & 8 index :: "<<maxSegmentTree.rangeQuery(6,8);
 	cout<<"\nMaximum between 2 & 3 index :: "<<maxSegmentTree.rangeQuery(2,3);
 	cout<<"\nMaximum between 4 & 4 index :: "<<maxSegmentTree.rangeQuery(4,4);
+	cout<<"\n\nUpdate between 2 & 6 index with value 10\n";
+	maxSegmentTree.rangeUpdate(2,6,10);
 	cout<<"\nMaximum between 3 & 7 index :: "<<maxSegmentTree.rangeQuery(3,7);
 	cout<<"\nMaximum between 0 & 9 index :: "<<maxSegmentTree.rangeQuery(0,9);
 
@@ -47,6 +49,8 @@ int main(){
 	cout<<"\nMinimum between 6 & 8 index :: "<<minSegmentTree.rangeQuery(6,8);
 	cout<<"\nMinimum between 2 & 3 index :: "<<minSegmentTree.rangeQuery(2,3);
 	cout<<"\nMinimum between 4 & 4 index :: "<<minSegmentTree.rangeQuery(4,4);
+	cout<<"\n\nUpdate between 2 & 6 index with value -10\n";
+	minSegmentTree.rangeUpdate(2,6,-10);
 	cout<<"\nMinimum between 3 & 7 index :: "<<minSegmentTree.rangeQuery(3,7);
 	cout<<"\nMinimum between 0 & 9 index :: "<<minSegmentTree.rangeQuery(0,9);
 

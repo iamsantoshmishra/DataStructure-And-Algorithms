@@ -29,7 +29,7 @@ MaxSegmnetTree::MaxSegmnetTree(int *arr,int size):SegmentTree(arr,size){
 //parameterized constructor it will take vector and call build function
 MaxSegmnetTree::MaxSegmnetTree(vector<int> v):SegmentTree(v){
 	memset(buffer,INT_MIN,sizeof(int)*_size);
-	//Building segment tree from given vextor
+	//Building segment tree from given vector
 	build(v,0,v.size()-1,0);
 }
 
@@ -93,6 +93,36 @@ int MaxSegmnetTree::rangeQueryUtil(int qlow,int qhigh,int low,int high,int pos){
 
 	return max(lmax,rmax);
 
+}
+
+//update range index with given delta
+void MaxSegmnetTree::rangeUpdateUtil(int qlow,int qhigh,int low,int high,int pos,int delta){
+
+
+	//no overlap
+	if(qlow > high || qhigh < low)
+		return;
+
+	//overlap
+	if(low == high){
+		buffer[pos] = buffer[pos] + delta;
+		return;
+	}
+
+
+
+	int mid = (low + high) / 2;
+
+	int l = left(pos);
+	int r = right(pos);
+
+	rangeUpdateUtil(qlow,qhigh,low,mid,l,delta);
+	rangeUpdateUtil(qlow,qhigh,mid+1,high,r,delta);
+
+	//update parent
+	buffer[pos] = max(buffer[l], buffer[r]);
+
+	return;
 }
 
 //destructor

@@ -73,6 +73,14 @@ int SegmentTree::rangeQuery(int qlow,int qhigh){
 	return (rangeQueryUtil(qlow,qhigh,0,_array_size-1,0));
 }
 
+//update range value with delta
+void SegmentTree::rangeUpdate(int qlow,int qhigh,int delta){
+
+	//calling rangeUpdateUtil it will update the given range value with delta
+	rangeUpdateUtil(qlow,qhigh,0,_array_size-1,0,delta);
+
+}
+
 // to get parent of node at index
 int SegmentTree::parent(int index){
 

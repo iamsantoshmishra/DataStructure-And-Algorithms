@@ -97,6 +97,36 @@ int MinSegmentTree::rangeQueryUtil(int qlow,int qhigh,int low,int high,int pos){
 
 }
 
+//update range index with given delta
+void MinSegmentTree::rangeUpdateUtil(int qlow,int qhigh,int low,int high,int pos,int delta){
+
+
+	//no overlap
+	if(qlow > high || qhigh < low)
+		return;
+
+	//overlap
+	if(low == high){
+		buffer[pos] = buffer[pos] + delta;
+		return;
+	}
+
+
+
+	int mid = (low + high) / 2;
+
+	int l = left(pos);
+	int r = right(pos);
+
+	rangeUpdateUtil(qlow,qhigh,low,mid,l,delta);
+	rangeUpdateUtil(qlow,qhigh,mid+1,high,r,delta);
+
+	//update parent
+	buffer[pos] = min(buffer[l], buffer[r]);
+
+	return;
+}
+
 //MinSegmnet Tree destructor
 MinSegmentTree::~MinSegmentTree() {
 	// TODO Auto-generated destructor stub

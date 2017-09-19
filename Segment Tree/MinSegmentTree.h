@@ -19,6 +19,7 @@ public:
 	virtual void build(int *arr,int low,int high,int pos);
 	virtual void build(vector<int> v,int low,int high,int pos);
 	virtual int rangeQueryUtil(int qlow,int qhigh,int low,int high,int pos);
+	virtual void rangeUpdateUtil(int qlow,int qhigh,int low,int high,int pos,int delta);
 	virtual ~MinSegmentTree();
 };
 
